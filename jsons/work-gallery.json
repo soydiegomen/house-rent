@@ -1,0 +1,59 @@
+[
+	{
+		"imgid" : 1,
+		"title": "diseño-breake",
+		"imageUrl": "img/home-work/diseno-breake.jpg",
+		"details" : "Diseño de publicidad para academia Tutu",
+		"serviceType" : 1
+	},
+	{
+		"imgid" : 5,
+		"title": "diseño-inscripción",
+		"imageUrl": "img/home-work/diseno-inscripcion.jpg",
+		"details" : "Diseño de publicidad para academia Tutu",
+		"serviceType" : 1
+	},
+	{
+		"imgid" : 2,
+		"title": "diseño-invitación",
+		"imageUrl": "img/home-work/diseno-invitacion.jpg",
+		"details" : "Diseño de invitaciones para bautiso Gael",
+		"serviceType" : 1
+	},
+	{
+		"imgid" : 6,
+		"title": "foto-bebe",
+		"imageUrl": "img/home-work/foto-bebe.jpg",
+		"details" : "Mi primer sesión de fotos con Majito",
+		"serviceType" : 3
+	},
+	{
+		"imgid" : 7,
+		"title": "foto-boda",
+		"imageUrl": "img/home-work/foto-boda.jpg",
+		"details" : "Sesión de fotos en boda de Mitzi y Ricardo",
+		"serviceType" : 3
+	},
+	{
+		"imgid" : 8,
+		"title": "foto-cumpleanos",
+		"imageUrl": "img/home-work/foto-cumpleanos.jpg",
+		"details" : "Sesión de fotos en fiesta de compleaños Beky",
+		"serviceType" : 3
+	},
+	{
+		"imgid" : 10,
+		"title": "web-cafeteria",
+		"imageUrl": "img/home-work/web-cafeteria.jpg",
+		"details" : "Desarrollo de sitio web para cafeteria",
+		"serviceType" : 4
+	},
+	{
+		"imgid" : 9,
+		"title": "web-blog",
+		"imageUrl": "img/home-work/web-blog.jpg",
+		"details" : "Desarrollo de blog para estrategias docentes",
+		"serviceType" : 4
+	}
+	
+]
