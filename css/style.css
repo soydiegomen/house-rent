@@ -135,3 +135,10 @@ a.coco-color:hover, input.coco-color:hover{
 	background-color: #FF3366;
 	border-color: #FF3366;
 }
+/*House details*/
+.house-images .house-image-content{
+	height: 450px;
+}
+.house-content{
+	margin: 20px
+}
