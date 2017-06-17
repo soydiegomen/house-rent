@@ -88,3 +88,15 @@ a.coco-color:hover, input.coco-color:hover{
 .price-filter{
 	padding-bottom: 10px;
 }
+.house-item{
+	margin: 20px 0;
+}
+.house-item a:hover{
+	text-decoration: none;
+}
+.house-item h4{
+	margin-bottom: 5px;
+}
+.house-item .item-views{
+	margin-left: 30px;
+}
