@@ -16,25 +16,48 @@ header{
 .hide-item{
 	display: none;
 }
+/* style for crop image */
+.cropped-image {
+  position: relative;
+  width: auto;
+  overflow: hidden;
+}
+.cropped-image img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.cropped-image img.portrait {
+  width: 100%;
+  height: auto;
+}
 /*Menu*/
 .navbar-brand{
 	font-size: 20px;
 	line-height: 22px;
 }
-.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand{
-	color: #fff;	
+.navbar-default .navbar-text{
+	font-size: 22px;
+    line-height: 40px;
 }
-.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-brand:hover{
-	color: #fff;
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-brand:hover,
+.navbar-default .navbar-text
+{
+	color: #323a45;
+	font-weight: bold;
 }
 .navbar{
 	margin-bottom: 0;
 	border-radius: 0;
 	border: 0;
 }
-.navbar .chai-brand-logo{
-	
-}
+
 .chai-brand-logo img{
 	margin-left: 20px;
 }
@@ -45,15 +68,15 @@ header{
 	margin-top: 18px;
 	margin-bottom: 18px;
 }
+/*form navbar*/
+.navbar-form .form-group{
+	line-height: 40px;
+}
 /*Helpers*/
 .coco-color{
 	background-color: #FF3366;
 	border-color: #FF3366;
 }
-.chai-dark-color{
-	background-color: #242424;
-}
-
 .coco-color a{
 	color: #fff;
 }
@@ -99,4 +122,16 @@ a.coco-color:hover, input.coco-color:hover{
 }
 .house-item .item-views{
 	margin-left: 30px;
+}
+.house-item .house-image-content{
+	height: 270px;
+}
+.house-content-header{
+	text-align: left;
+}
+/*pagination*/
+.pagination>.active>a,
+.pagination>.active>a:hover{
+	background-color: #FF3366;
+	border-color: #FF3366;
 }
