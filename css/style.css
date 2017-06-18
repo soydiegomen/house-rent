@@ -142,3 +142,38 @@ a.coco-color:hover, input.coco-color:hover{
 .house-content{
 	margin: 20px
 }
+.form-group{
+	margin-bottom: 0;
+}
+.form-horizontal .control-label{
+	text-align: left;
+}
+.form-horizontal .control-label{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.form-control-static{
+	padding-top: 0px;	
+	padding-bottom: 0px;
+	min-height: 30px;
+}
+/* house features */
+.house-features {
+	margin: 30px 0;
+}
+.house-features i{
+	display: block;
+	font-size: 30px;
+	margin-bottom: 7px;
+}
+.house-features span{
+	font-size: 18px;
+	font-weight: bold;
+}
+.house-actions a{
+	width: 100%;
+}
+.house-metrics{
+	margin: 10px 10px 20px 10px;
+	font-size: 18px;
+}
