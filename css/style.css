@@ -149,17 +149,17 @@ a.no-underline:hover{
 .house-content{
 	margin: 20px
 }
-.form-group{
+.house-section .form-group{
 	margin-bottom: 0;
 }
-.form-horizontal .control-label{
+.house-section .form-horizontal .control-label{
 	text-align: left;
 }
-.form-horizontal .control-label{
+.house-section .form-horizontal .control-label{
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
-.form-control-static{
+.house-section .form-control-static{
 	padding-top: 0px;	
 	padding-bottom: 0px;
 	min-height: 30px;
@@ -198,4 +198,11 @@ a.no-underline:hover{
 }
 .map-container{
 	margin-top: 20px;
+}
+/*Admin*/
+.contact-form{
+	margin-top: 30px;
+}
+.contact-form .form-control{
+	max-width: 500px;
 }
