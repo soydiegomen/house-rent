@@ -203,6 +203,18 @@ a.no-underline:hover{
 .contact-form{
 	margin-top: 30px;
 }
+.form-admin > form{
+	margin-bottom: 50px;
+}
 .contact-form .form-control{
 	max-width: 500px;
+}
+.admin-subsection{
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+.admin-counter-input{
+	display: initial;
+    width: 50px;
+    text-align: center;
 }
