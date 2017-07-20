@@ -13,5 +13,38 @@
 			<input type="file" name="userPhoto" />
 			<input type="submit" value="Upload Image" name="submit">
 		</form>
+		<h2>Second Form</h2>
+		<form id="ajax-form"
+	         enctype="multipart/form-data"
+	         action="http://localhost:3000/api/upload-files"
+	         method="post">
+	      <input type="file" name="userPhoto" />
+	      <input type="submit" value="Upload Image" name="submit">
+	      <span id = "status"></span>
+	    </form>
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+  		<script>
+			$(document).ready(function() {
+				console.log('Hire');
+				 $('#ajax-form').submit(function() {
+				    $("#status").empty().text("File is uploading...");
+				    $(this).ajaxSubmit({
+
+				        error: function(xhr) {
+				    		console.log('Error: ' + xhr.status);
+				        },
+
+				        success: function(response) {
+				    		$("#status").empty().text(response);
+				            console.log(response);
+				        }
+					});
+				    
+				    //Very important line, it disable the page refresh.
+					return false;
+				});    
+			});
+		</script>
 	</body>
 </html>
