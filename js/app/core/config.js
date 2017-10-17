@@ -5,12 +5,10 @@
 
     core.constant('appConfig', 
     {
-        apiBaseUrl: 'http://104.131.137.249/',
+        apiBaseUrl: 'http://localhost:3000',
     });
 
     core.config(configure);
-
-    //configure.$inject = ['$routeProvider', 'routehelperConfigProvider', 'locationProvider'];
 
     function configure ($routeProvider, routehelperConfigProvider, $locationProvider) {
 
