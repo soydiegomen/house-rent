@@ -320,21 +320,22 @@
             </article>
           </div>
           <!-- end column for house item -->
-          <div class="col-md-6">
+          <div class="col-md-6" ng-repeat="house in homeCtrl.listHouses">
             <article class="house-item">
               <a href="#">
                 <div class="cropped-image house-image-content">
-                  <img src="img/demo/houses/casa-dos.jpg" alt="casa uno" class="img-responsive portrait">
+                  <img ng-src="{{house.defautltImage.completeUrl}}" alt="casa uno" class="img-responsive portrait">
                 </div>
               </a>
               <div class="item-details">
                 <a href="#">
                   <h4>
-                    $2,500 Casa de dos pisos a 5 min del centro
+                      $<span ng-bind="house.price"></span>
+                      <span ng-bind="house.title"></span>
                   </h4>
                   <div class="item-address text-muted">
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Calle Alcatraz, Col Javier Barrios  
+                    <span ng-bind="house.address.address"></span>
                   </div>
                   <div class="item-metrics text-muted">
                     <span class="item-loves">
