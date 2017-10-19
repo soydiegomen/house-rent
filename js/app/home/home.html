@@ -5,6 +5,23 @@
         <div class="filter-header">
           Filtros
         </div>
+        <div id="filtro-habitaciones">
+          <div class="filter-header">
+            <i class="fa fa-bed" aria-hidden="true"></i>
+            Palabras clave
+          </div>
+          <div class="filter-content text-center">
+            <div class="form-group">
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <a href="#" class="btn btn-primary coco-color">
+                Aplicar
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- end filtro palabra clave -->
         <div id="filtro-propiedad">
           <div class="filter-header">
             <i class="fa fa-home" aria-hidden="true"></i>
@@ -13,19 +30,22 @@
           <div class="filter-content">
             <ul class="list-unstyled">
               <li>
-                <a href="#">Casas</a>
+                <a href ng-click="homeCtrl.filterByProperty('Casa')">Casas</a>
               </li>
               <li>
-                <a href="#">Departamentos</a>
+                <a href ng-click="homeCtrl.filterByProperty('Departamento')">Departamentos</a>
               </li>
               <li>
-                <a href="#">Locales</a>
+                <a href ng-click="homeCtrl.filterByProperty('Local')">Locales</a>
               </li>
               <li>
-                <a href="#">Terrenos</a>
+                <a href ng-click="homeCtrl.filterByProperty('Terreno')">Terrenos</a>
               </li>
               <li>
-                <a href="#">Otros</a>
+                <a href ng-click="homeCtrl.filterByProperty('Salon')">Salones</a>
+              </li>
+              <li>
+                <a href ng-click="homeCtrl.filterByProperty('Otro')">Otros</a>
               </li>
             </ul>
           </div>
@@ -39,10 +59,10 @@
           <div class="filter-content">
             <ul class="list-unstyled">
               <li>
-                <a href="#">Venta</a>
+                <a href ng-click="homeCtrl.filterByOperation('Venta')">Venta</a>
               </li>
               <li>
-                <a href="#">Renta</a>
+                <a href ng-click="homeCtrl.filterByOperation('Renta')">Renta</a>
               </li>
             </ul>
           </div>
@@ -70,8 +90,8 @@
             </a>
           </div>
         </div>
-        <!-- end filtro habitaciones -->
-        <div id="filtro-habitaciones">
+        <!-- end filtro precios -->
+        <div id="filtro-habitaciones" class="hide">
           <div class="filter-header">
             <i class="fa fa-bed" aria-hidden="true"></i>
             Habitaciones
@@ -103,222 +123,6 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
-            <article class="house-item">
-              <a href="#">
-                <div class="cropped-image house-image-content">
-                  <img src="img/demo/houses/casa-uno.jpg" alt="casa uno" class="img-responsive">
-                </div>
-              </a>
-              <div class="item-details">
-                <a href="#">
-                  <h4>
-                    $2,500 Casa de dos pisos a 5 min del centro
-                  </h4>
-                  <div class="item-address text-muted">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Calle Alcatraz, Col Javier Barrios  
-                  </div>
-                  <div class="item-metrics text-muted">
-                    <span class="item-loves">
-                      <i class="fa fa-heart" aria-hidden="true"></i>
-                      250
-                    </span>
-                    <span class="item-views">
-                      <i class="fa fa-eye" aria-hidden="true"></i>
-                      1,300
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </article>
-          </div>
-          <!-- end column for house item -->
-          <div class="col-md-6">
-            <article class="house-item">
-              <a href="#">
-                <div class="cropped-image house-image-content">
-                  <img src="img/demo/houses/casa-cuatro.jpg" alt="casa uno" class="img-responsive">
-                </div>
-              </a>
-              <div class="item-details">
-                <a href="#">
-                  <h4>
-                    $2,500 Casa de dos pisos a 5 min del centro
-                  </h4>
-                  <div class="item-address text-muted">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Calle Alcatraz, Col Javier Barrios  
-                  </div>
-                  <div class="item-metrics text-muted">
-                    <span class="item-loves">
-                      <i class="fa fa-heart" aria-hidden="true"></i>
-                      250
-                    </span>
-                    <span class="item-views">
-                      <i class="fa fa-eye" aria-hidden="true"></i>
-                      1,300
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </article>
-          </div>
-          <!-- end column for house item -->
-          <div class="col-md-6">
-            <article class="house-item">
-              <a href="#">
-                <div class="cropped-image house-image-content">
-                  <img src="img/demo/houses/casa-tres.jpg" alt="casa uno" class="img-responsive portrait">
-                </div>
-              </a>
-              <div class="item-details">
-                <a href="#">
-                  <h4>
-                    $2,500 Casa de dos pisos a 5 min del centro
-                  </h4>
-                  <div class="item-address text-muted">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Calle Alcatraz, Col Javier Barrios  
-                  </div>
-                  <div class="item-metrics text-muted">
-                    <span class="item-loves">
-                      <i class="fa fa-heart" aria-hidden="true"></i>
-                      250
-                    </span>
-                    <span class="item-views">
-                      <i class="fa fa-eye" aria-hidden="true"></i>
-                      1,300
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </article>
-          </div>
-          <!-- end column for house item -->
-          <div class="col-md-6">
-            <article class="house-item">
-              <a href="#">
-                <div class="cropped-image house-image-content">
-                  <img src="img/demo/houses/casa-dos.jpg" alt="casa uno" class="img-responsive portrait">
-                </div>
-              </a>
-              <div class="item-details">
-                <a href="#">
-                  <h4>
-                    $2,500 Casa de dos pisos a 5 min del centro
-                  </h4>
-                  <div class="item-address text-muted">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Calle Alcatraz, Col Javier Barrios  
-                  </div>
-                  <div class="item-metrics text-muted">
-                    <span class="item-loves">
-                      <i class="fa fa-heart" aria-hidden="true"></i>
-                      250
-                    </span>
-                    <span class="item-views">
-                      <i class="fa fa-eye" aria-hidden="true"></i>
-                      1,300
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </article>
-          </div>
-          <!-- end column for house item -->
-          <div class="col-md-6">
-            <article class="house-item">
-              <a href="#">
-                <div class="cropped-image house-image-content">
-                  <img src="img/demo/houses/casa-uno.jpg" alt="casa uno" class="img-responsive">
-                </div>
-              </a>
-              <div class="item-details">
-                <a href="#">
-                  <h4>
-                    $2,500 Casa de dos pisos a 5 min del centro
-                  </h4>
-                  <div class="item-address text-muted">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Calle Alcatraz, Col Javier Barrios  
-                  </div>
-                  <div class="item-metrics text-muted">
-                    <span class="item-loves">
-                      <i class="fa fa-heart" aria-hidden="true"></i>
-                      250
-                    </span>
-                    <span class="item-views">
-                      <i class="fa fa-eye" aria-hidden="true"></i>
-                      1,300
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </article>
-          </div>
-          <!-- end column for house item -->
-          <div class="col-md-6">
-            <article class="house-item">
-              <a href="#">
-                <div class="cropped-image house-image-content">
-                  <img src="img/demo/houses/casa-cuatro.jpg" alt="casa uno" class="img-responsive">
-                </div>
-              </a>
-              <div class="item-details">
-                <a href="#">
-                  <h4>
-                    $2,500 Casa de dos pisos a 5 min del centro
-                  </h4>
-                  <div class="item-address text-muted">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Calle Alcatraz, Col Javier Barrios  
-                  </div>
-                  <div class="item-metrics text-muted">
-                    <span class="item-loves">
-                      <i class="fa fa-heart" aria-hidden="true"></i>
-                      250
-                    </span>
-                    <span class="item-views">
-                      <i class="fa fa-eye" aria-hidden="true"></i>
-                      1,300
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </article>
-          </div>
-          <!-- end column for house item -->
-          <div class="col-md-6">
-            <article class="house-item">
-              <a href="#">
-                <div class="cropped-image house-image-content">
-                  <img src="img/demo/houses/casa-tres.jpg" alt="casa uno" class="img-responsive portrait">
-                </div>
-              </a>
-              <div class="item-details">
-                <a href="#">
-                  <h4>
-                    $2,500 Casa de dos pisos a 5 min del centro
-                  </h4>
-                  <div class="item-address text-muted">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Calle Alcatraz, Col Javier Barrios  
-                  </div>
-                  <div class="item-metrics text-muted">
-                    <span class="item-loves">
-                      <i class="fa fa-heart" aria-hidden="true"></i>
-                      250
-                    </span>
-                    <span class="item-views">
-                      <i class="fa fa-eye" aria-hidden="true"></i>
-                      1,300
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </article>
-          </div>
           <!-- end column for house item -->
           <div class="col-md-6" ng-repeat="house in homeCtrl.listHouses">
             <article class="house-item">

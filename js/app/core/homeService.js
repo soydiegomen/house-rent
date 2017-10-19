@@ -13,11 +13,10 @@
 
 		return service;
 
-		function getHouses(type){
-			var serviceUrl = appConfig.apiBaseUrl + '/api/published-houses'+
-				'?property=Casa&operation=Venta&greater=100&least=6000';
+		function getHouses(filters){
+			var serviceUrl = appConfig.apiBaseUrl + '/api/published-houses';
 
-			return $http.get(serviceUrl).then(housesComplete);
+			return $http.get(serviceUrl, { params: filters } ).then(housesComplete);
 
 			function housesComplete(data, status, headers, config){
 				return data.data;

@@ -13,6 +13,11 @@
 		homeCtrl.listHouses = null;
 
 		//Atributtes
+		var filters = { property: '', operation: '', greater: 0, least: 0 };
+
+		//Events
+		homeCtrl.filterByProperty = filterByProperty;
+		homeCtrl.filterByOperation = filterByOperation;
 
 		//Initialize controller
 		activate();
@@ -23,10 +28,21 @@
 		}
 
 		//Events
+		function filterByProperty(selectedProperty){
+			filters.property = selectedProperty;
+			//Call backen service and update house list
+			getHouses();
+		}
+
+		function filterByOperation(selectedOperation){
+			filters.operation = selectedOperation;
+			//Call backen service and update house list
+			getHouses();
+		}
 
 		//Helpers
 		function getHouses(){
-			homeService.getHouses().then(function(data){
+			homeService.getHouses(filters).then(function(data){
 				setupHouseList(data);
 				homeCtrl.listHouses = data;
 			});
