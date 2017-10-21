@@ -12,11 +12,11 @@
           </div>
           <div class="filter-content text-center">
             <div class="form-group">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" ng-model="homeCtrl.filters.search">
             </div>
             <div class="form-group">
-              <a href="#" class="btn btn-primary coco-color">
-                Aplicar
+              <a href class="btn btn-primary coco-color" ng-click="homeCtrl.filterByKey()">
+                Buscar
               </a>
             </div>
           </div>
@@ -117,11 +117,26 @@
         <div class="row">
           <div class="col-md-12">
             <div class="filter-header house-content-header">
-              <i class="fa fa-th-list" aria-hidden="true"></i>
-              Resultado de la búsqueda: 1,200 propiedades
+              <div id="list-houses-header">
+                <i class="fa fa-th-list" aria-hidden="true"></i>
+                Resultado de la búsqueda: <span>{{homeCtrl.listHouses.length}}</span> propiedades
+              </div>
+              <!-- list houses header -->
+              <div id="selected-filters">
+                <ul class="list-unstyled list-inline">
+                  <li ng-repeat="filter in homeCtrl.selectedFilters">
+                    <a href ng-click="homeCtrl.unselectFilter(filter)">
+                      <span ng-bind="filter.value"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- end selected-filters -->
             </div>
+            <!-- end filter-header -->
           </div>
         </div>
+        <!-- end row -->
         <div class="row">
           <!-- end column for house item -->
           <div class="col-md-6" ng-repeat="house in homeCtrl.listHouses">
@@ -144,11 +159,11 @@
                   <div class="item-metrics text-muted">
                     <span class="item-loves">
                       <i class="fa fa-heart" aria-hidden="true"></i>
-                      250
+                      <span ng-bind="house.likes"></span>
                     </span>
                     <span class="item-views">
                       <i class="fa fa-eye" aria-hidden="true"></i>
-                      1,300
+                      <span ng-bind="house.views"></span>
                     </span>
                   </div>
                 </a>
@@ -182,6 +197,14 @@
             </nav>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-center" ng-show="(homeCtrl.listHouses && homeCtrl.listHouses.length == 0)">
+              Por ahora no hay casa que coincidan con esos criterios de busqueda :)
+            </h3>
+          </div>
+        </div>
+        <!-- end pagination row -->
       </div>
       <!-- end houses-content -->
     </div>
