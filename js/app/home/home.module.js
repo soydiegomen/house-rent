@@ -1,4 +1,4 @@
 ( function() {
 	'use strict';
-	angular.module('chaiApp.home', []);
+	angular.module('chaiApp.home', ['rzModule']);
 })();

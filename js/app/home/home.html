@@ -15,7 +15,7 @@
               <input type="text" class="form-control" ng-model="homeCtrl.filters.search">
             </div>
             <div class="form-group">
-              <a href class="btn btn-primary coco-color" ng-click="homeCtrl.filterByKey()">
+              <a href class="btn btn-primary coco-color" ng-click="homeCtrl.applyFilter()">
                 Buscar
               </a>
             </div>
@@ -79,13 +79,16 @@
             </div>
             <br/>
             <!-- TODO use a range slider -->
-            <div class="progress">
+            <!--<div class="progress">
               <div class="progress-bar" role="progressbar" aria-valuenow="70"
               aria-valuemin="0" aria-valuemax="100" style="width:70%">
                 <span class="sr-only">70% Complete</span>
               </div>
+            </div>-->
+            <div>
+              <rzslider rz-slider-model="homeCtrl.filters.min" rz-slider-high="homeCtrl.rangeMax" rz-slider-options="homeCtrl.rangeOptions"></rzslider>
             </div>
-            <a href="#" class="btn btn-primary coco-color">
+            <a href class="btn btn-primary coco-color" ng-click="homeCtrl.applyFilter()">
               Aplicar
             </a>
           </div>

@@ -9,24 +9,31 @@
 	function HomeCtrl(homeService){
 		var homeCtrl = this;
 
+		//Atributtes
+		var _rangeMax = 10000;
+
 		//Properties
 		homeCtrl.listHouses = null;
 		homeCtrl.filters = { 
 			search: '',
 			property: '', 
 			operation: '', 
-			greater: 0, 
-			least: 0 
+			max: 0, 
+			min: 0 
 		};
 		homeCtrl.selectedFilters = [];
-
-		//Atributtes
 		
+		homeCtrl.rangeMax = _rangeMax;
+	    homeCtrl.rangeOptions = {
+		    ceil: _rangeMax,
+		    floor: 0,
+		    showTicksValues: false
+	    };
 
 		//Events
 		homeCtrl.filterByProperty = filterByProperty;
 		homeCtrl.filterByOperation = filterByOperation;
-		homeCtrl.filterByKey = filterByKey;
+		homeCtrl.applyFilter = applyFilter;
 		homeCtrl.unselectFilter = unselectFilter;
 
 		//Initialize controller
@@ -58,9 +65,9 @@
 			getHouses();
 		}
 
-		function filterByKey(){
+		function applyFilter(){
 			//Call backend service and update house list
-			console.log(homeCtrl.filters.search);
+			console.log(homeCtrl.filters.greater);
 			getHouses();
 		}
 
@@ -81,6 +88,15 @@
 
 		//Helpers
 		function getHouses(){
+
+			//Cuando el filtro de rangos es diferente al máximo, entonces 
+			//Aplicamos el filtro de montos, en caso contrario mandamos el valor 0 en el rango superior
+			if(homeCtrl.rangeMax !==  _rangeMax || homeCtrl.filters.min > 0){
+				homeCtrl.filters.max = homeCtrl.rangeMax;
+			}else{
+				homeCtrl.filters.max = 0;
+			}
+
 			homeService.getHouses(homeCtrl.filters).then(function(data){
 				setupHouseList(data);
 				homeCtrl.listHouses = data;
